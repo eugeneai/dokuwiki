@@ -83,6 +83,18 @@ function media_metasave($id,$auth,$data){
 }
 
 /**
+ * check if a media is external source
+ *
+ * @author Gerrit Uitslag <klapinklapin@gmail.com>
+ * @param string $id the media ID or URL
+ * @return bool
+ */
+function media_isexternal($id){
+    if (preg_match('#^(https?|ftp)://#i', $id)) return true;
+    return false;
+}
+
+/**
  * Check if a media item is public (eg, external URL or readable by @ALL)
  *
  * @author Andreas Gohr <andi@splitbrain.org>
@@ -90,7 +102,7 @@ function media_metasave($id,$auth,$data){
  * @return bool
  */
 function media_ispublic($id){
-    if(preg_match('/^https?:\/\//i',$id)) return true;
+    if(media_isexternal($id)) return true;
     $id = cleanID($id);
     if(auth_aclcheck(getNS($id).':*', '', array()) >= AUTH_READ) return true;
     return false;
@@ -1879,20 +1891,21 @@ function media_crop_image($file, $ext, $w, $h=0){
  * cropped images have been internally generated - and prevent external
  * DDOS attacks via fetch
  *
+ * @author Christopher Smith <chris@jalakai.co.uk>
+ *
  * @param string  $id    id of the image
  * @param int     $w     resize/crop width
  * @param int     $h     resize/crop height
- *
- * @author Christopher Smith <chris@jalakai.co.uk>
+ * @return string
  */
 function media_get_token($id,$w,$h){
     // token is only required for modified images
     if ($w || $h) {
-        $token = auth_cookiesalt().$id;
+        $token = $id;
         if ($w) $token .= '.'.$w;
         if ($h) $token .= '.'.$h;
 
-        return substr(md5($token),0,6);
+        return substr(PassHash::hmac('md5', $token, auth_cookiesalt()),0,6);
     }
 
     return '';
