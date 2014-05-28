@@ -10,6 +10,8 @@
  * @author Caleb Maclennan <caleb@alerque.com>
  * @author farukerdemoncel@gmail.com
  * @author Mustafa Aslan <maslan@hotmail.com>
+ * @author huseyin can <huseyincan73@gmail.com>
+ * @author ilker rifat kapaç <irifat@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -54,6 +56,8 @@ $lang['btn_register']          = 'Kayıt ol';
 $lang['btn_apply']             = 'Uygula';
 $lang['btn_media']             = 'Çokluortam Yöneticisi';
 $lang['btn_deleteuser']        = 'Hesabımı Sil';
+$lang['btn_img_backto']        = 'Şuna dön: %s';
+$lang['btn_mediaManager']      = 'Ortam oynatıcısında göster';
 $lang['loggedinas']            = 'Giriş ismi';
 $lang['user']                  = 'Kullanıcı ismi';
 $lang['pass']                  = 'Parola';
@@ -179,6 +183,7 @@ $lang['yours']                 = 'Senin Sürümün';
 $lang['diff']                  = 'Kullanılan sürüm ile farkları göster';
 $lang['diff2']                 = 'Seçili sürümler arasındaki farkı göster';
 $lang['difflink']              = 'Karşılaştırma görünümüne bağlantı';
+$lang['diff_type']             = 'farklı görünüş';
 $lang['line']                  = 'Satır';
 $lang['breadcrumb']            = 'İz';
 $lang['youarehere']            = 'Buradasınız';
@@ -191,10 +196,17 @@ $lang['external_edit']         = 'Dışarıdan düzenle';
 $lang['summary']               = 'Özeti düzenle';
 $lang['noflash']               = 'Bu içeriği göstermek için <a href="http://www.adobe.com/products/flashplayer/">Adobe Flash Eklentisi</a> gerekmektedir.';
 $lang['download']              = 'Parçacığı indir';
+$lang['tools']                 = 'Alet';
+$lang['user_tools']            = 'Kullanıcı Aletleri';
+$lang['site_tools']            = 'Site Aletleri';
+$lang['page_tools']            = 'Sayfa Aletleri';
+$lang['skip_to_content']       = 'Bağlanmak için kaydır';
+$lang['sidebar']               = 'kaydırma çubuğu';
 $lang['mail_newpage']          = 'sayfa eklenme:';
 $lang['mail_changed']          = 'sayfa değiştirilme:';
 $lang['mail_new_user']         = 'yeni kullanıcı';
 $lang['mail_upload']           = 'dosya yüklendi:';
+$lang['changes_type']          = 'görünüşü değiştir';
 $lang['pages_changes']         = 'Sayfalar';
 $lang['media_changes']         = 'Çokluortam dosyaları';
 $lang['both_changes']          = 'Sayfalar ve çoklu ortam dosyaları';
@@ -224,7 +236,6 @@ $lang['admin_register']        = 'Yeni kullanıcı ekle...';
 $lang['metaedit']              = 'Metaverileri Değiştir';
 $lang['metasaveerr']           = 'Metaveri yazma başarısız ';
 $lang['metasaveok']            = 'Metaveri kaydedildi';
-$lang['img_backto']            = 'Şuna dön:';
 $lang['img_title']             = 'Başlık';
 $lang['img_caption']           = 'Serlevha';
 $lang['img_date']              = 'Tarih';
@@ -237,7 +248,9 @@ $lang['img_camera']            = 'Fotoğraf Makinası';
 $lang['img_keywords']          = 'Anahtar Sözcükler';
 $lang['img_width']             = 'Genişlik';
 $lang['img_height']            = 'Yükseklik';
-$lang['img_manager']           = 'Ortam oynatıcısında göster';
+$lang['subscr_m_new_header']   = 'Üyelik ekle';
+$lang['subscr_m_current_header'] = 'Üyeliğini onayla';
+$lang['subscr_m_unsubscribe']  = 'Üyelik iptali';
 $lang['subscr_m_subscribe']    = 'Kayıt ol';
 $lang['subscr_m_receive']      = 'Al';
 $lang['authtempfail']          = 'Kullanıcı doğrulama geçici olarak yapılamıyor. Eğer bu durum devam ederse lütfen Wiki yöneticine haber veriniz.';
@@ -289,5 +302,12 @@ $lang['media_search']          = '%s dizininde ara';
 $lang['media_view']            = '%s';
 $lang['media_edit']            = 'Düzenle %s';
 $lang['media_history']         = 'Geçmiş %s';
+$lang['media_meta_edited']     = 'üstveri düzenlendi';
+$lang['media_perm_read']       = 'Özür dileriz, dosyaları okumak için yeterli haklara sahip değilsiniz.';
 $lang['media_perm_upload']     = 'Üzgünüm, karşıya dosya yükleme yetkiniz yok.';
+$lang['media_update']          = 'Yeni versiyonu yükleyin';
 $lang['media_restore']         = 'Bu sürümü eski haline getir';
+$lang['currentns']             = 'Geçerli isimalanı';
+$lang['searchresult']          = 'Arama Sonucu';
+$lang['plainhtml']             = 'Yalın HTML';
+$lang['wikimarkup']            = 'Wiki Biçimlendirmesi';

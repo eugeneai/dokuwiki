@@ -21,14 +21,17 @@
  * @author Gerrit Uitslag <klapinklapin@gmail.com>
  * @author Klap-in <klapinklapin@gmail.com>
  * @author Remon <no@email.local>
+ * @author gicalle <gicalle@hotmail.com>
+ * @author Rene <wllywlnt@yahoo.com>
+ * @author Johan Vervloet <johan.vervloet@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
-$lang['doublequoteopening']    = '„';
+$lang['doublequoteopening']    = '“';
 $lang['doublequoteclosing']    = '”';
-$lang['singlequoteopening']    = '‚';
+$lang['singlequoteopening']    = '‘';
 $lang['singlequoteclosing']    = '’';
-$lang['apostrophe']            = '\'';
+$lang['apostrophe']            = '’';
 $lang['btn_edit']              = 'Pagina aanpassen';
 $lang['btn_source']            = 'Toon broncode';
 $lang['btn_show']              = 'Toon pagina';
@@ -65,6 +68,8 @@ $lang['btn_register']          = 'Registreren';
 $lang['btn_apply']             = 'Toepassen';
 $lang['btn_media']             = 'Mediabeheerder';
 $lang['btn_deleteuser']        = 'Verwijder mijn account';
+$lang['btn_img_backto']        = 'Terug naar %s';
+$lang['btn_mediaManager']      = 'In mediabeheerder bekijken';
 $lang['loggedinas']            = 'Ingelogd als';
 $lang['user']                  = 'Gebruikersnaam';
 $lang['pass']                  = 'Wachtwoord';
@@ -196,6 +201,11 @@ $lang['difflink']              = 'Link naar deze vergelijking';
 $lang['diff_type']             = 'Bekijk verschillen:';
 $lang['diff_inline']           = 'Inline';
 $lang['diff_side']             = 'Zij aan zij';
+$lang['diffprevrev']           = 'Vorige revisie';
+$lang['diffnextrev']           = 'Volgende revisie';
+$lang['difflastrev']           = 'Laatste revisie';
+$lang['diffbothprevrev']       = 'Beide kanten vorige revisie';
+$lang['diffbothnextrev']       = 'Beide kanten volgende revisie';
 $lang['line']                  = 'Regel';
 $lang['breadcrumb']            = 'Spoor';
 $lang['youarehere']            = 'Je bent hier';
@@ -252,7 +262,6 @@ $lang['admin_register']        = 'Nieuwe gebruiker toevoegen';
 $lang['metaedit']              = 'Metadata wijzigen';
 $lang['metasaveerr']           = 'Schrijven van metadata mislukt';
 $lang['metasaveok']            = 'Metadata bewaard';
-$lang['img_backto']            = 'Terug naar';
 $lang['img_title']             = 'Titel';
 $lang['img_caption']           = 'Bijschrift';
 $lang['img_date']              = 'Datum';
@@ -265,7 +274,6 @@ $lang['img_camera']            = 'Camera';
 $lang['img_keywords']          = 'Trefwoorden';
 $lang['img_width']             = 'Breedte';
 $lang['img_height']            = 'Hoogte';
-$lang['img_manager']           = 'In mediabeheerder bekijken';
 $lang['subscr_subscribe_success'] = '%s is ingeschreven voor %s';
 $lang['subscr_subscribe_error'] = 'Fout bij inschrijven van %s voor %s';
 $lang['subscr_subscribe_noaddress'] = 'Er is geen e-mailadres gekoppeld aan uw account, u kunt daardoor niet worden ingeschreven.';
@@ -304,6 +312,7 @@ $lang['i_policy']              = 'Initieel ACL-beleid';
 $lang['i_pol0']                = 'Open wiki (lezen, schrijven, uploaden voor iedereen)';
 $lang['i_pol1']                = 'Publieke wiki (lezen voor iedereen, schrijven en uploaden voor geregistreerde gebruikers)';
 $lang['i_pol2']                = 'Besloten wiki (lezen, schrijven en uploaden alleen voor geregistreerde gebruikers)';
+$lang['i_allowreg']            = 'Toestaan dat gebruikers zichzelf registeren';
 $lang['i_retry']               = 'Opnieuw';
 $lang['i_license']             = 'Kies a.u.b. een licentie die u voor uw inhoud wilt gebruiken:';
 $lang['i_license_none']        = 'Toon geen licentie informatie';

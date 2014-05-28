@@ -18,6 +18,11 @@
  * @author Rachel <rzhang0802@gmail.com>
  * @author Donald <donaldtcong@gmail.com>
  * @author Yangyu Huang <yangyu.huang@gmail.com>
+ * @author anjianshi <anjianshi@gmail.com>
+ * @author oott123 <ip.192.168.1.1@qq.com>
+ * @author Cupen <Cupenoruler@foxmail.com>
+ * @author xiqingongzi <Xiqingongzi@Gmail.com>
+ * @author qinghao <qingxianhao@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -33,7 +38,7 @@ $lang['btn_create']            = '创建该页面';
 $lang['btn_search']            = '搜索';
 $lang['btn_save']              = '保存';
 $lang['btn_preview']           = '预览';
-$lang['btn_top']               = '到顶部';
+$lang['btn_top']               = '回到顶部';
 $lang['btn_newer']             = '<< 较新的';
 $lang['btn_older']             = '较旧的 >>';
 $lang['btn_revs']              = '修订记录';
@@ -62,6 +67,8 @@ $lang['btn_register']          = '注册';
 $lang['btn_apply']             = '应用';
 $lang['btn_media']             = '媒体管理器';
 $lang['btn_deleteuser']        = '移除我的账户';
+$lang['btn_img_backto']        = '返回到 %s';
+$lang['btn_mediaManager']      = '在媒体管理器中查看';
 $lang['loggedinas']            = '登录为';
 $lang['user']                  = '用户名';
 $lang['pass']                  = '密码';
@@ -77,7 +84,7 @@ $lang['badpassconfirm']        = '对不起，密码错误';
 $lang['minoredit']             = '细微修改';
 $lang['draftdate']             = '草稿自动保存于';
 $lang['nosecedit']             = '在您编辑期间本页刚被他人修改过，局部信息已过期，故载入全页。';
-$lang['regmissing']            = '对不起，您必须填写所有的区域。';
+$lang['regmissing']            = '对不起，您必须填写所有的字段。';
 $lang['reguexists']            = '对不起，该用户名已经存在。';
 $lang['regsuccess']            = '新用户已建立，密码将通过电子邮件发送给您。';
 $lang['regsuccess2']           = '新用户已建立';
@@ -86,7 +93,7 @@ $lang['regbadmail']            = '您输入的邮件地址有问题——如果�
 $lang['regbadpass']            = '您输入的密码与系统产生的不符，请重试。';
 $lang['regpwmail']             = '您的 DokuWiki 密码';
 $lang['reghere']               = '还没有账号？立即注册';
-$lang['profna']                = '本维基不支持修改个人信息';
+$lang['profna']                = '本维基不允许修改个人信息';
 $lang['profnochange']          = '没有改动，不进行操作。';
 $lang['profnoempty']           = '不允许使用空的用户名或邮件地址。';
 $lang['profchanged']           = '用户信息更新成功。';
@@ -193,6 +200,11 @@ $lang['difflink']              = '到此差别页面的链接';
 $lang['diff_type']             = '查看差异：';
 $lang['diff_inline']           = '行内显示';
 $lang['diff_side']             = '并排显示';
+$lang['diffprevrev']           = '前一修订版';
+$lang['diffnextrev']           = '后一修订版';
+$lang['difflastrev']           = '上一修订版';
+$lang['diffbothprevrev']       = '两侧同时换到之前的修订记录';
+$lang['diffbothnextrev']       = '两侧同时换到之后的修订记录';
 $lang['line']                  = '行';
 $lang['breadcrumb']            = '您的足迹';
 $lang['youarehere']            = '您在这里';
@@ -249,7 +261,6 @@ $lang['admin_register']        = '添加新用户';
 $lang['metaedit']              = '编辑元数据';
 $lang['metasaveerr']           = '写入元数据失败';
 $lang['metasaveok']            = '元数据已保存';
-$lang['img_backto']            = '返回到';
 $lang['img_title']             = '标题';
 $lang['img_caption']           = '说明';
 $lang['img_date']              = '日期';
@@ -262,7 +273,6 @@ $lang['img_camera']            = '相机';
 $lang['img_keywords']          = '关键字';
 $lang['img_width']             = '宽度';
 $lang['img_height']            = '高度';
-$lang['img_manager']           = '在媒体管理器中查看';
 $lang['subscr_subscribe_success'] = '添加 %s 到 %s 的订阅列表';
 $lang['subscr_subscribe_error'] = '添加 %s 到 %s 的订阅列表中出现错误';
 $lang['subscr_subscribe_noaddress'] = '没有与您登录信息相关联的地址，您无法被添加到订阅列表';
@@ -305,6 +315,7 @@ $lang['i_policy']              = '初始的 ACL 政策';
 $lang['i_pol0']                = '开放的维基（任何人都有读、写、上传的权限）';
 $lang['i_pol1']                = '公共的维基（任何人都有读的权限，只有注册用户才有写和上传的权限）';
 $lang['i_pol2']                = '关闭的维基（只有注册用户才有读、写、上传的权限）';
+$lang['i_allowreg']            = '允许用户自行注册';
 $lang['i_retry']               = '重试';
 $lang['i_license']             = '请选择您希望的内容发布许可协议：';
 $lang['i_license_none']        = '不要显示任何许可协议信息';
@@ -342,3 +353,7 @@ $lang['media_perm_read']       = '抱歉，您没有足够权限读取这些文�
 $lang['media_perm_upload']     = '抱歉，您没有足够权限来上传文件。';
 $lang['media_update']          = '上传新版本';
 $lang['media_restore']         = '恢复这个版本';
+$lang['currentns']             = '当前命名空间';
+$lang['searchresult']          = '搜索结果';
+$lang['plainhtml']             = '纯HTML';
+$lang['wikimarkup']            = 'Wiki Markup 语言';

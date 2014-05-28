@@ -11,6 +11,7 @@
  * @author Satoshi Sahara <sahara.satoshi@gmail.com>
  * @author Hideaki SAWADA <chuno@live.jp>
  * @author Hideaki SAWADA <sawadakun@live.jp>
+ * @author PzF_X <jp_minecraft@yahoo.co.jp>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -55,6 +56,8 @@ $lang['btn_register']          = 'ユーザー登録';
 $lang['btn_apply']             = '適用';
 $lang['btn_media']             = 'メディアマネージャー';
 $lang['btn_deleteuser']        = '自分のアカウントの抹消';
+$lang['btn_img_backto']        = '戻る %s';
+$lang['btn_mediaManager']      = 'メディアマネージャーで閲覧';
 $lang['loggedinas']            = 'ようこそ';
 $lang['user']                  = 'ユーザー名';
 $lang['pass']                  = 'パスワード';
@@ -184,6 +187,11 @@ $lang['difflink']              = 'この比較画面にリンクする';
 $lang['diff_type']             = '差分の表示方法：';
 $lang['diff_inline']           = 'インライン';
 $lang['diff_side']             = '横に並べる';
+$lang['diffprevrev']           = '前のリビジョン';
+$lang['diffnextrev']           = '次のリビジョン';
+$lang['difflastrev']           = '最新リビジョン';
+$lang['diffbothprevrev']       = '両方とも前のリビジョン';
+$lang['diffbothnextrev']       = '両方とも次のリビジョン';
 $lang['line']                  = 'ライン';
 $lang['breadcrumb']            = 'トレース';
 $lang['youarehere']            = '現在位置';
@@ -240,7 +248,6 @@ $lang['admin_register']        = '新規ユーザー作成';
 $lang['metaedit']              = 'メタデータ編集';
 $lang['metasaveerr']           = 'メタデータの書き込みに失敗しました';
 $lang['metasaveok']            = 'メタデータは保存されました';
-$lang['img_backto']            = '戻る';
 $lang['img_title']             = 'タイトル';
 $lang['img_caption']           = '見出し';
 $lang['img_date']              = '日付';
@@ -253,7 +260,6 @@ $lang['img_camera']            = '使用カメラ';
 $lang['img_keywords']          = 'キーワード';
 $lang['img_width']             = '幅';
 $lang['img_height']            = '高さ';
-$lang['img_manager']           = 'メディアマネージャーで閲覧';
 $lang['subscr_subscribe_success'] = '%sが%sの購読リストに登録されました。';
 $lang['subscr_subscribe_error'] = '%sを%sの購読リストへの追加に失敗しました。';
 $lang['subscr_subscribe_noaddress'] = 'あなたのログインに対応するアドレスがないため、購読リストへ追加することができません。';
@@ -294,6 +300,7 @@ $lang['i_policy']              = 'ACL初期設定';
 $lang['i_pol0']                = 'オープン Wiki（全ての人に、閲覧・書き込み・アップロードを許可）';
 $lang['i_pol1']                = 'パブリック Wiki（閲覧は全ての人が可能、書き込み・アップロードは登録ユーザーのみ）';
 $lang['i_pol2']                = 'クローズド Wiki (登録ユーザーにのみ使用を許可)';
+$lang['i_allowreg']            = 'ユーザ自身で登録可能';
 $lang['i_retry']               = '再試行';
 $lang['i_license']             = 'あなたが作成したコンテンツが属するライセンスを選択してください：';
 $lang['i_license_none']        = 'ライセンス情報を表示しません。';
@@ -331,3 +338,7 @@ $lang['media_perm_read']       = 'ファイルを閲覧する権限がありま�
 $lang['media_perm_upload']     = 'ファイルをアップロードする権限がありません。';
 $lang['media_update']          = '新しいバージョンをアップロード';
 $lang['media_restore']         = 'このバージョンを復元';
+$lang['currentns']             = '現在の名前空間';
+$lang['searchresult']          = '検索結果';
+$lang['plainhtml']             = 'プレーンHTML';
+$lang['wikimarkup']            = 'Wikiマークアップ';

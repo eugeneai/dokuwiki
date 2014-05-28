@@ -22,6 +22,7 @@
  * @author Victor Westmann <victor.westmann@gmail.com>
  * @author Leone Lisboa Magevski <leone1983@gmail.com>
  * @author Dário Estevão <darioems@gmail.com>
+ * @author Juliano Marconi Lanigra <juliano.marconi@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -97,6 +98,8 @@ $lang['profchanged']           = 'O perfil do usuário foi atualizado com sucess
 $lang['profnodelete']          = 'Esse wiki não suporta a exclusão de usuários ';
 $lang['profdeleteuser']        = 'Excluir a conta';
 $lang['profdeleted']           = 'Sua conta de usuário foi excluída desse wiki';
+$lang['profconfdelete']        = 'Eu desejo remover minha conta dessa wiki. <br/> Essa ação não pode ser desfeita.';
+$lang['profconfdeletemissing'] = 'Caixa de confirmação não marcada';
 $lang['pwdforget']             = 'Esqueceu sua senha? Solicite outra';
 $lang['resendna']              = 'Esse wiki não tem suporte para o reenvio de senhas.';
 $lang['resendpwd']             = 'Definir a nova senha para';
@@ -251,7 +254,7 @@ $lang['admin_register']        = 'Adicionar novo usuário';
 $lang['metaedit']              = 'Editar metadados';
 $lang['metasaveerr']           = 'Não foi possível escrever os metadados';
 $lang['metasaveok']            = 'Os metadados foram salvos';
-$lang['img_backto']            = 'Voltar para';
+$lang['btn_img_backto']            = 'Voltar para %s';
 $lang['img_title']             = 'Título';
 $lang['img_caption']           = 'Descrição';
 $lang['img_date']              = 'Data';
@@ -264,7 +267,7 @@ $lang['img_camera']            = 'Câmera';
 $lang['img_keywords']          = 'Palavras-chave';
 $lang['img_width']             = 'Largura';
 $lang['img_height']            = 'Altura';
-$lang['img_manager']           = 'Ver no gerenciador de mídias';
+$lang['btn_mediaManager']           = 'Ver no gerenciador de mídias';
 $lang['subscr_subscribe_success'] = 'Adicionado %s à lista de monitoramentos de %s';
 $lang['subscr_subscribe_error'] = 'Ocorreu um erro na adição de %s à lista de monitoramentos de %s';
 $lang['subscr_subscribe_noaddress'] = 'Como não há nenhum endereço associado ao seu usuário, você não pode ser adicionado à lista de monitoramento';
@@ -304,6 +307,7 @@ $lang['i_policy']              = 'Política inicial de permissões';
 $lang['i_pol0']                = 'Wiki aberto (leitura, escrita e envio de arquivos por todos)';
 $lang['i_pol1']                = 'Wiki público (leitura por todos, escrita e envio de arquivos por usuários registrados)';
 $lang['i_pol2']                = 'Wiki fechado (leitura, escrita e envio de arquivos somente por usuários registrados)';
+$lang['i_allowreg']            = 'Permite usuários se registrarem';
 $lang['i_retry']               = 'Tentar novamente';
 $lang['i_license']             = 'Por favor escolha a licença que voce deseja utilizar para seu conteúdo:';
 $lang['i_license_none']        = 'Não mostrar nenhuma informação da licença';
@@ -341,3 +345,7 @@ $lang['media_perm_read']       = 'Desculpe, mas você não tem privilégios sufi
 $lang['media_perm_upload']     = 'Desculpe, mas você não tem privilégios suficientes para enviar arquivos.';
 $lang['media_update']          = 'Enviar uma nova versão';
 $lang['media_restore']         = 'Restaurar esta versão';
+$lang['currentns']             = 'Domínio atual';
+$lang['searchresult']          = 'Resultado da Busca';
+$lang['plainhtml']             = 'HTML simples';
+$lang['wikimarkup']            = 'Marcação wiki';

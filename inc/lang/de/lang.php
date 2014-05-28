@@ -22,6 +22,10 @@
  * @author Paul Lachewsky <kaeptn.haddock@gmail.com>
  * @author Pierre Corell <info@joomla-praxis.de>
  * @author Mateng Schimmerlos <mateng@firemail.de>
+ * @author Benedikt Fey <spam@lifeisgoooood.de>
+ * @author Joerg <scooter22@gmx.de>
+ * @author Simon <st103267@stud.uni-stuttgart.de>
+ * @author Hoisl <hoisl@gmx.at>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -66,6 +70,8 @@ $lang['btn_register']          = 'Registrieren';
 $lang['btn_apply']             = 'Übernehmen';
 $lang['btn_media']             = 'Medien-Manager';
 $lang['btn_deleteuser']        = 'Benutzerprofil löschen';
+$lang['btn_img_backto']        = 'Zurück zu %s';
+$lang['btn_mediaManager']      = 'Im Medien-Manager anzeigen';
 $lang['loggedinas']            = 'Angemeldet als';
 $lang['user']                  = 'Benutzername';
 $lang['pass']                  = 'Passwort';
@@ -195,6 +201,9 @@ $lang['difflink']              = 'Link zu dieser Vergleichsansicht';
 $lang['diff_type']             = 'Unterschiede anzeigen:';
 $lang['diff_inline']           = 'Inline';
 $lang['diff_side']             = 'Side by Side';
+$lang['diffprevrev']           = 'Vorhergehende Überarbeitung';
+$lang['diffnextrev']           = 'Nächste  Überarbeitung';
+$lang['difflastrev']           = 'Letzte  Überarbeitung';
 $lang['line']                  = 'Zeile';
 $lang['breadcrumb']            = 'Zuletzt angesehen';
 $lang['youarehere']            = 'Sie befinden sich hier';
@@ -251,7 +260,6 @@ $lang['admin_register']        = 'Neuen Benutzer anmelden';
 $lang['metaedit']              = 'Metadaten bearbeiten';
 $lang['metasaveerr']           = 'Die Metadaten konnten nicht gesichert werden';
 $lang['metasaveok']            = 'Metadaten gesichert';
-$lang['img_backto']            = 'Zurück zu';
 $lang['img_title']             = 'Titel';
 $lang['img_caption']           = 'Bildunterschrift';
 $lang['img_date']              = 'Datum';
@@ -264,7 +272,6 @@ $lang['img_camera']            = 'Kamera';
 $lang['img_keywords']          = 'Schlagwörter';
 $lang['img_width']             = 'Breite';
 $lang['img_height']            = 'Höhe';
-$lang['img_manager']           = 'Im Medien-Manager anzeigen';
 $lang['subscr_subscribe_success'] = '%s hat nun Änderungen der Seite %s abonniert';
 $lang['subscr_subscribe_error'] = '%s kann die Änderungen der Seite %s nicht abonnieren';
 $lang['subscr_subscribe_noaddress'] = 'Weil Ihre E-Mail-Adresse fehlt, können Sie das Thema nicht abonnieren';
@@ -303,6 +310,7 @@ $lang['i_policy']              = 'Anfangseinstellungen der Zugangskontrolle (ACL
 $lang['i_pol0']                = 'Offenes Wiki (lesen, schreiben und hochladen für alle Benutzer)';
 $lang['i_pol1']                = 'Öffentliches Wiki (Lesen für alle, Schreiben und Hochladen nur für registrierte Benutzer)';
 $lang['i_pol2']                = 'Geschlossenes Wiki (Lesen, Schreiben und Hochladen nur für registrierte Benutzer)';
+$lang['i_allowreg']            = 'Benutzer dürfen sich registrieren';
 $lang['i_retry']               = 'Wiederholen';
 $lang['i_license']             = 'Bitte wählen Sie die Lizenz, unter die Sie Ihre Inhalte stellen möchten:';
 $lang['i_license_none']        = 'Lizensierungsinformation nicht anzeigen';
@@ -340,3 +348,7 @@ $lang['media_perm_read']       = 'Sie besitzen nicht die notwendigen Berechtigun
 $lang['media_perm_upload']     = 'Sie besitzen nicht die notwendigen Berechtigungen um Dateien hochzuladen.';
 $lang['media_update']          = 'Neue Version hochladen';
 $lang['media_restore']         = 'Diese Version wiederherstellen';
+$lang['currentns']             = 'Aktueller Namensraum';
+$lang['searchresult']          = 'Suchergebnisse';
+$lang['plainhtml']             = 'HTML Klartext';
+$lang['wikimarkup']            = 'Wiki Markup';

@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- *
+ * 
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Christof <gagi@fin.de>
  * @author Anika Henke <anika@selfthinker.org>
@@ -21,6 +21,7 @@
  * @author Pierre Corell <info@joomla-praxis.de>
  * @author Frank Loizzi <contact@software.bacal.de>
  * @author Volker Bödker <volker@boedker.de>
+ * @author Janosch <janosch@moinzen.de>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -250,7 +251,7 @@ $lang['admin_register']        = 'Neuen Benutzer anmelden';
 $lang['metaedit']              = 'Metadaten bearbeiten';
 $lang['metasaveerr']           = 'Die Metadaten konnten nicht gesichert werden';
 $lang['metasaveok']            = 'Metadaten gesichert';
-$lang['img_backto']            = 'Zurück zu';
+$lang['btn_img_backto']            = 'Zurück zu %s';
 $lang['img_title']             = 'Titel';
 $lang['img_caption']           = 'Bildunterschrift';
 $lang['img_date']              = 'Datum';
@@ -263,7 +264,7 @@ $lang['img_camera']            = 'Kamera';
 $lang['img_keywords']          = 'Schlagwörter';
 $lang['img_width']             = 'Breite';
 $lang['img_height']            = 'Höhe';
-$lang['img_manager']           = 'Im Medien-Manager anzeigen';
+$lang['btn_mediaManager']           = 'Im Medien-Manager anzeigen';
 $lang['subscr_subscribe_success'] = 'Die Seite %s wurde zur Abonnementliste von %s hinzugefügt';
 $lang['subscr_subscribe_error'] = 'Fehler beim Hinzufügen von %s zur Abonnementliste von %s';
 $lang['subscr_subscribe_noaddress'] = 'In deinem Account ist keine E-Mail-Adresse hinterlegt. Dadurch kann die Seite nicht abonniert werden';
@@ -302,6 +303,7 @@ $lang['i_policy']              = 'Anfangseinstellungen der Zugangskontrolle (ACL
 $lang['i_pol0']                = 'Offenes Wiki (lesen, schreiben und hochladen für alle Benutzer)';
 $lang['i_pol1']                = 'Öffentliches Wiki (Lesen für alle, Schreiben und Hochladen nur für registrierte Benutzer)';
 $lang['i_pol2']                = 'Geschlossenes Wiki (Lesen, Schreiben und Hochladen nur für registrierte Benutzer)';
+$lang['i_allowreg']            = 'Benutzer können sich selbst registrieren';
 $lang['i_retry']               = 'Wiederholen';
 $lang['i_license']             = 'Bitte wähle die Lizenz aus unter der die Wiki-Inhalte veröffentlicht werden sollen:';
 $lang['i_license_none']        = 'Keine Lizenzinformationen anzeigen';
@@ -339,3 +341,5 @@ $lang['media_perm_read']       = 'Du besitzt nicht die notwendigen Berechtigunge
 $lang['media_perm_upload']     = 'Du besitzt nicht die notwendigen Berechtigungen um Dateien hochzuladen.';
 $lang['media_update']          = 'Neue Version hochladen';
 $lang['media_restore']         = 'Diese Version wiederherstellen';
+$lang['currentns']             = 'Aktueller Namensraum';
+$lang['searchresult']          = 'Suchergebnis';
