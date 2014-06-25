@@ -65,6 +65,7 @@ $lang['status_disabled']              = 'disabled';
 $lang['status_unmodifiable']          = 'unmodifiable';
 $lang['status_plugin']                = 'plugin';
 $lang['status_template']              = 'template';
+$lang['status_bundled']               = 'bundled';
 
 $lang['msg_enabled']                  = 'Plugin %s enabled';
 $lang['msg_disabled']                 = 'Plugin %s disabled';
@@ -96,3 +97,5 @@ $lang['git']                          = 'This extension was installed via git, y
 
 $lang['install_url']                  = 'Install from URL:';
 $lang['install_upload']               = 'Upload Extension:';
+
+$lang['repo_error']                   = 'The plugin repository could not be contacted. Make sure your server is allowed to contact www.dokuwiki.org and check your proxy settings.';

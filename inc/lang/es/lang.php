@@ -31,6 +31,10 @@
  * @author r0sk <r0sk10@gmail.com>
  * @author monica <may.dorado@gmail.com>
  * @author Antonio Bueno <atnbueno@gmail.com>
+ * @author Juan De La Cruz <juann.dlc@gmail.com>
+ * @author Fernando <fdiezala@gmail.com>
+ * @author Eloy <ej.perezgomez@gmail.com>
+ * @author Antonio Castilla <antoniocastilla@trazoide.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -75,7 +79,9 @@ $lang['btn_register']          = 'Registrarse';
 $lang['btn_apply']             = 'Aplicar';
 $lang['btn_media']             = 'Gestor de ficheros';
 $lang['btn_deleteuser']        = 'Elimina Mi Cuenta';
-$lang['loggedinas']            = 'Conectado como ';
+$lang['btn_img_backto']        = 'Volver a %s';
+$lang['btn_mediaManager']      = 'Ver en el Administrador de medios';
+$lang['loggedinas']            = 'Conectado como :';
 $lang['user']                  = 'Usuario';
 $lang['pass']                  = 'Contraseña';
 $lang['newpass']               = 'Nueva contraseña';
@@ -120,12 +126,12 @@ $lang['license']               = 'Excepto donde se indique lo contrario, el cont
 $lang['licenseok']             = 'Nota: Al editar esta página, estás de acuerdo en autorizar su contenido bajo la siguiente licencia:';
 $lang['searchmedia']           = 'Buscar archivo:';
 $lang['searchmedia_in']        = 'Buscar en %s';
-$lang['txt_upload']            = 'Selecciona el archivo a subir';
-$lang['txt_filename']          = 'Subir como (opcional)';
+$lang['txt_upload']            = 'Selecciona el archivo a subir:';
+$lang['txt_filename']          = 'Subir como (opcional):';
 $lang['txt_overwrt']           = 'Sobreescribir archivo existente';
 $lang['maxuploadsize']         = 'Peso máximo de %s por archivo';
-$lang['lockedby']              = 'Actualmente bloqueado por';
-$lang['lockexpire']            = 'El bloqueo expira en';
+$lang['lockedby']              = 'Actualmente bloqueado por:';
+$lang['lockexpire']            = 'El bloqueo expira en:';
 $lang['js']['willexpire']      = 'El bloqueo para la edición de esta página expira en un minuto.\nPAra prevenir conflictos uso el botón Previsualizar para restaurar el contador de bloqueo.';
 $lang['js']['notsavedyet']     = 'Los cambios que no se han guardado se perderán.
 ¿Realmente quieres continuar?';
@@ -206,10 +212,15 @@ $lang['difflink']              = 'Enlace a la vista de comparación';
 $lang['diff_type']             = 'Ver diferencias';
 $lang['diff_inline']           = 'En línea';
 $lang['diff_side']             = 'Lado a lado';
+$lang['diffprevrev']           = 'Revisión previa';
+$lang['diffnextrev']           = 'Próxima revisión';
+$lang['difflastrev']           = 'Última revisión';
+$lang['diffbothprevrev']       = 'Ambos lados, revisión anterior';
+$lang['diffbothnextrev']       = 'Ambos lados, revisión siguiente';
 $lang['line']                  = 'Línea';
-$lang['breadcrumb']            = 'Traza';
-$lang['youarehere']            = 'Estás aquí';
-$lang['lastmod']               = 'Última modificación';
+$lang['breadcrumb']            = 'Traza:';
+$lang['youarehere']            = 'Estás aquí:';
+$lang['lastmod']               = 'Última modificación:';
 $lang['by']                    = 'por';
 $lang['deleted']               = 'borrado';
 $lang['created']               = 'creado';
@@ -262,20 +273,18 @@ $lang['admin_register']        = 'Añadir nuevo usuario';
 $lang['metaedit']              = 'Editar metadatos';
 $lang['metasaveerr']           = 'La escritura de los metadatos ha fallado';
 $lang['metasaveok']            = 'Los metadatos han sido guardados';
-$lang['img_backto']            = 'Volver a';
-$lang['img_title']             = 'Título';
-$lang['img_caption']           = 'Epígrafe';
-$lang['img_date']              = 'Fecha';
-$lang['img_fname']             = 'Nombre de fichero';
-$lang['img_fsize']             = 'Tamaño';
-$lang['img_artist']            = 'Fotógrafo';
-$lang['img_copyr']             = 'Copyright';
-$lang['img_format']            = 'Formato';
-$lang['img_camera']            = 'Cámara';
-$lang['img_keywords']          = 'Palabras claves';
-$lang['img_width']             = 'Ancho';
-$lang['img_height']            = 'Alto';
-$lang['img_manager']           = 'Ver en el Administrador de medios';
+$lang['img_title']             = 'Título:';
+$lang['img_caption']           = 'Epígrafe:';
+$lang['img_date']              = 'Fecha:';
+$lang['img_fname']             = 'Nombre de fichero:';
+$lang['img_fsize']             = 'Tamaño:';
+$lang['img_artist']            = 'Fotógrafo:';
+$lang['img_copyr']             = 'Copyright:';
+$lang['img_format']            = 'Formato:';
+$lang['img_camera']            = 'Cámara:';
+$lang['img_keywords']          = 'Palabras claves:';
+$lang['img_width']             = 'Ancho:';
+$lang['img_height']            = 'Alto:';
 $lang['subscr_subscribe_success'] = 'Se agregó %s a las listas de suscripción para %s';
 $lang['subscr_subscribe_error'] = 'Error al agregar %s a las listas de suscripción para %s';
 $lang['subscr_subscribe_noaddress'] = 'No hay dirección asociada con tu registro, no se puede agregarte a la lista de suscripción';
@@ -303,6 +312,7 @@ $lang['i_problems']            = 'El instalador encontró algunos problemas, se 
 $lang['i_modified']            = 'Por razones de seguridad este script sólo funcionará con una instalación nueva y no modificada de Dokuwiki. Usted debe extraer nuevamente los ficheros del paquete bajado, o bien consultar las <a href="http://dokuwiki.org/install">instrucciones de instalación de Dokuwiki</a> completas.';
 $lang['i_funcna']              = 'La función de PHP <code>%s</code> no está disponible. ¿Tal vez su proveedor de hosting la ha deshabilitado por alguna razón?';
 $lang['i_phpver']              = 'Su versión de PHP <code>%s</code> es menor que la necesaria <code>%s</code>. Es necesario que actualice su instalación de PHP.';
+$lang['i_mbfuncoverload']      = 'mbstring.func_overload se debe deshabilitar en php.ini para que funcione DokuWiki.';
 $lang['i_permfail']            = 'DokuWili no puede escribir <code>%s</code>. ¡Es necesario establecer  correctamente los permisos de este directorio!';
 $lang['i_confexists']          = '<code>%s</code> ya existe';
 $lang['i_writeerr']            = 'Imposible crear <code>%s</code>. Se necesita que usted controle los permisos del fichero/directorio y que cree el fichero manualmente.';
@@ -321,13 +331,13 @@ $lang['i_license_none']        = 'No mostrar ninguna información sobre licencia
 $lang['i_pop_field']           = 'Por favor, ayúdanos a mejorar la experiencia de DokuWiki:';
 $lang['i_pop_label']           = 'Una vez al mes, enviar información anónima de uso de datos a los desarrolladores de DokuWiki';
 $lang['recent_global']         = 'Actualmente estás viendo los cambios dentro del namespace <b>%s</b>. También puedes <a href="%s">ver los cambios recientes en el wiki completo</a>.';
-$lang['years']                 = '%d años atrás';
-$lang['months']                = '%d meses atrás';
-$lang['weeks']                 = '%d semanas atrás';
-$lang['days']                  = '%d días atrás';
-$lang['hours']                 = '%d horas atrás';
-$lang['minutes']               = '%d minutos atrás';
-$lang['seconds']               = '%d segundos atrás';
+$lang['years']                 = 'hace %d años';
+$lang['months']                = 'hace %d meses';
+$lang['weeks']                 = 'hace %d semanas';
+$lang['days']                  = 'hace %d días';
+$lang['hours']                 = 'hace %d horas';
+$lang['minutes']               = 'hace %d minutos';
+$lang['seconds']               = 'hace %d segundos';
 $lang['wordblock']             = 'Sus cambios no se han guardado porque contienen textos bloqueados (spam).';
 $lang['media_uploadtab']       = 'Cargar';
 $lang['media_searchtab']       = 'Buscar';
