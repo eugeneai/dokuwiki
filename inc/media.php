@@ -203,7 +203,7 @@ define('DOKU_MEDIA_EMPTY_NS', 8);
  *
  * @author             Andreas Gohr <andi@splitbrain.org>
  * @param string $id media id
- * @param int $auth current auth check result
+ * @param int $auth no longer used
  * @return int One of: 0,
  *                     DOKU_MEDIA_DELETED,
  *                     DOKU_MEDIA_DELETED | DOKU_MEDIA_EMPTY_NS,
@@ -212,6 +212,7 @@ define('DOKU_MEDIA_EMPTY_NS', 8);
  */
 function media_delete($id,$auth){
     global $lang;
+    $auth = auth_quickaclcheck(ltrim(getNS($id).':*', ':'));
     if($auth < AUTH_DELETE) return DOKU_MEDIA_NOT_AUTH;
     if(media_inuse($id)) return DOKU_MEDIA_INUSE;
 
@@ -581,6 +582,12 @@ function media_notify($id,$file,$mime,$old_rev=false){
 
 /**
  * List all files in a given Media namespace
+ *
+ * @param string        $ns             namespace
+ * @param null|int      $auth           permission level
+ * @param string        $jump
+ * @param bool          $fullscreenview
+ * @param bool|string   $sort           sorting, false skips sorting
  */
 function media_filelist($ns,$auth=null,$jump='',$fullscreenview=false,$sort=false){
     global $conf;

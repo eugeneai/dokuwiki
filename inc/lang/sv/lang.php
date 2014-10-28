@@ -20,6 +20,7 @@
  * @author Henrik <henrik@idealis.se>
  * @author Tor Härnqvist <tor.harnqvist@gmail.com>
  * @author Hans Iwan Bratt <hibratt@gmail.com>
+ * @author Mikael Bergström <krank23@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -62,8 +63,10 @@ $lang['btn_draftdel']          = 'Radera utkast';
 $lang['btn_revert']            = 'Återställ';
 $lang['btn_register']          = 'Registrera';
 $lang['btn_apply']             = 'Verkställ';
-$lang['btn_media']             = 'Media Hanteraren';
+$lang['btn_media']             = 'Mediahanteraren';
 $lang['btn_deleteuser']        = 'Ta bort Mitt Konto';
+$lang['btn_img_backto']        = 'Tillbaka till %s';
+$lang['btn_mediaManager']      = 'Se mediahanteraren';
 $lang['loggedinas']            = 'Inloggad som:';
 $lang['user']                  = 'Användarnamn';
 $lang['pass']                  = 'Lösenord';
@@ -79,6 +82,7 @@ $lang['badpassconfirm']        = 'Ledsen, lösenordet var felaktigt';
 $lang['minoredit']             = 'Små ändringar';
 $lang['draftdate']             = 'Utkast automatiskt sparat';
 $lang['nosecedit']             = 'Sidan ändrades medan du skrev, sektionsinformationen var inte uppdaterad. Laddar hela sidan istället.';
+$lang['searchcreatepage']      = 'Om du inte hittar det du letar efter, så kan du skapa eller redigera sidan med någon av knapparna.';
 $lang['regmissing']            = 'Du måste fylla i alla fälten.';
 $lang['reguexists']            = 'Det finns redan en användare med det användarnamnet.';
 $lang['regsuccess']            = 'Användarkontot skapat, lösenordet har skickats via e-post.';
@@ -249,7 +253,6 @@ $lang['admin_register']        = 'Lägg till ny användare';
 $lang['metaedit']              = 'Redigera metadata';
 $lang['metasaveerr']           = 'Skrivning av metadata misslyckades';
 $lang['metasaveok']            = 'Metadata sparad';
-$lang['btn_img_backto']            = 'Tillbaka till %s';
 $lang['img_title']             = 'Rubrik:';
 $lang['img_caption']           = 'Bildtext:';
 $lang['img_date']              = 'Datum:';
@@ -262,7 +265,6 @@ $lang['img_camera']            = 'Kamera:';
 $lang['img_keywords']          = 'Nyckelord:';
 $lang['img_width']             = 'Bredd:';
 $lang['img_height']            = 'Höjd:';
-$lang['btn_mediaManager']           = 'Se mediahanteraren';
 $lang['subscr_subscribe_success'] = 'La till %s till prenumerationslista %s';
 $lang['subscr_subscribe_noaddress'] = 'Det finns ingen adress associerad med din inloggning, du kan inte bli tillagd i prenumerationslistan';
 $lang['subscr_unsubscribe_success'] = '%s borttagen från prenumerationslistan för %s';
