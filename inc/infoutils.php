@@ -58,9 +58,9 @@ function checkUpdateMessages(){
 function getVersionData(){
     $version = array();
     //import version string
-    if(@file_exists(DOKU_INC.'VERSION')){
+    if(file_exists(DOKU_INC.'VERSION')){
         //official release
-        $version['date'] = trim(io_readfile(DOKU_INC.'VERSION'));
+        $version['date'] = trim(io_readFile(DOKU_INC.'VERSION'));
         $version['type'] = 'Release';
     }elseif(is_dir(DOKU_INC.'.git')){
         $version['type'] = 'Git';
@@ -141,20 +141,20 @@ function check(){
     if(is_writable($conf['changelog'])){
         msg('Changelog is writable',1);
     }else{
-        if (@file_exists($conf['changelog'])) {
+        if (file_exists($conf['changelog'])) {
             msg('Changelog is not writable',-1);
         }
     }
 
-    if (isset($conf['changelog_old']) && @file_exists($conf['changelog_old'])) {
+    if (isset($conf['changelog_old']) && file_exists($conf['changelog_old'])) {
         msg('Old changelog exists', 0);
     }
 
-    if (@file_exists($conf['changelog'].'_failed')) {
+    if (file_exists($conf['changelog'].'_failed')) {
         msg('Importing old changelog failed', -1);
-    } else if (@file_exists($conf['changelog'].'_importing')) {
+    } else if (file_exists($conf['changelog'].'_importing')) {
         msg('Importing old changelog now.', 0);
-    } else if (@file_exists($conf['changelog'].'_import_ok')) {
+    } else if (file_exists($conf['changelog'].'_import_ok')) {
         msg('Old changelog imported', 1);
         if (!plugin_isdisabled('importoldchangelog')) {
             msg('Importoldchangelog plugin not disabled after import', -1);
@@ -249,18 +249,41 @@ function check(){
         }
     }
 
-    if ($index_corrupted)
-        msg('The search index is corrupted. It might produce wrong results and most
+    if($index_corrupted) {
+        msg(
+            'The search index is corrupted. It might produce wrong results and most
                 probably needs to be rebuilt. See
                 <a href="http://www.dokuwiki.org/faq:searchindex">faq:searchindex</a>
-                for ways to rebuild the search index.', -1);
-    elseif (!empty($lengths))
+                for ways to rebuild the search index.', -1
+        );
+    } elseif(!empty($lengths)) {
         msg('The search index seems to be working', 1);
-    else
-        msg('The search index is empty. See
+    } else {
+        msg(
+            'The search index is empty. See
                 <a href="http://www.dokuwiki.org/faq:searchindex">faq:searchindex</a>
                 for help on how to fix the search index. If the default indexer
-                isn\'t used or the wiki is actually empty this is normal.');
+                isn\'t used or the wiki is actually empty this is normal.'
+        );
+    }
+
+    // rough time check
+    $http = new DokuHTTPClient();
+    $http->max_redirect = 0;
+    $http->timeout = 3;
+    $http->sendRequest('http://www.dokuwiki.org', '', 'HEAD');
+    $now = time();
+    if(isset($http->resp_headers['date'])) {
+        $time = strtotime($http->resp_headers['date']);
+        $diff = $time - $now;
+
+        if(abs($diff) < 4) {
+            msg("Server time seems to be okay. Diff: {$diff}s", 1);
+        } else {
+            msg("Your server's clock seems to be out of sync! Consider configuring a sync with a NTP server.  Diff: {$diff}s");
+        }
+    }
+
 }
 
 /**
@@ -297,6 +320,7 @@ define('MSG_ADMINS_ONLY',4);
  */
 function msg($message,$lvl=0,$line='',$file='',$allow=MSG_PUBLIC){
     global $MSG, $MSG_shown;
+    $errors = array();
     $errors[-1] = 'error';
     $errors[0]  = 'info';
     $errors[1]  = 'success';
@@ -453,7 +477,7 @@ function dbg_backtrace(){
                 }elseif(is_array($arg)){
                     $params[] = '[Array]';
                 }elseif(is_null($arg)){
-                    $param[] = '[NULL]';
+                    $params[] = '[NULL]';
                 }else{
                     $params[] = (string) '"'.$arg.'"';
                 }

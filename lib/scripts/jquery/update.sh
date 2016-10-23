@@ -9,13 +9,17 @@
 # @link   http://code.jquery.com/
 
 # Adjust version for jQuery-UI here - there's no good latest link
-JQUI_VERSION='1.11.0'
+JQUI_VERSION='1.11.4'
 JQUI_HOST="https://code.jquery.com/ui/$JQUI_VERSION"
 JQUI_GIT="https://raw.githubusercontent.com/jquery/jquery-ui/$JQUI_VERSION/ui"
 
+# Adjust version for jQuery here - latest updates slowly
+JQ_VERSION='2.2.4'
+
+
 # load jQuery
-wget -nv http://code.jquery.com/jquery-latest.min.js      -O jquery.min.js
-wget -nv http://code.jquery.com/jquery-latest.js          -O jquery.js
+wget -nv http://code.jquery.com/jquery-${JQ_VERSION}.min.js      -O jquery.min.js
+wget -nv http://code.jquery.com/jquery-${JQ_VERSION}.js          -O jquery.js
 
 # load jQuery-UI
 wget -nv "$JQUI_HOST/jquery-ui.min.js" -O jquery-ui.min.js
@@ -45,6 +49,7 @@ wget -nv "$JQUI_GIT/i18n/datepicker-de.js" -O ../../../inc/lang/de-informal/jque
 wget -nv "$JQUI_GIT/i18n/datepicker-pt-BR.js" -O ../../../inc/lang/pt-br/jquery.ui.datepicker.js
 wget -nv "$JQUI_GIT/i18n/datepicker-zh-CN.js" -O ../../../inc/lang/zh/jquery.ui.datepicker.js
 wget -nv "$JQUI_GIT/i18n/datepicker-zh-TW.js" -O ../../../inc/lang/zh-tw/jquery.ui.datepicker.js
+wget -nv "$JQUI_GIT/i18n/datepicker-cy-GB.js" -O ../../../inc/lang/cy/jquery.ui.datepicker.js
 
 # strip source maps
 sed -i '/sourceMappingURL/d' *.min.js

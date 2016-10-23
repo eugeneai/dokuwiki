@@ -1,8 +1,8 @@
 <?php
+
 /**
- * Chinese(Simplified) language file
- *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ *
  * @author ZDYX <zhangduyixiong@gmail.com>
  * @author http://www.chinese-tools.com/tools/converter-tradsimp.html
  * @author George Sheraton guxd@163.com
@@ -15,6 +15,8 @@
  * @author caii, patent agent in China <zhoucaiqi@gmail.com>
  * @author lainme993@gmail.com
  * @author Shuo-Ting Jian <shoting@gmail.com>
+ * @author Garfield <garfield_550@outlook.com>
+ * @author JellyChen <451453325@qq.com>
  */
 $lang['menu']                  = '配置设置';
 $lang['error']                 = '由于非法参数，设置没有更新。请检查您做的改动并重新提交。
@@ -65,7 +67,7 @@ $lang['breadcrumbs']           = '显示“足迹”的数量';
 $lang['youarehere']            = '显示“您在这里”';
 $lang['fullpath']              = '在页面底部显示完整路径';
 $lang['typography']            = '进行字符替换';
-$lang['dformat']               = '日期格式（参见 PHP 的 <a href="http://www.php.net/strftime">strftime</a> 功能）';
+$lang['dformat']               = '日期格式（参见 PHP 的 <a href="http://php.net/strftime">strftime</a> 功能）';
 $lang['signature']             = '签名样式';
 $lang['showuseras']            = '显示用户为';
 $lang['toptoclevel']           = '目录的最顶层';
@@ -90,7 +92,9 @@ $lang['disableactions']        = '停用 DokuWiki 功能';
 $lang['disableactions_check']  = '检查';
 $lang['disableactions_subscription'] = '订阅/退订';
 $lang['disableactions_wikicode'] = '查看源文件/导出源文件';
+$lang['disableactions_profile_delete'] = '删除自己的账户';
 $lang['disableactions_other']  = '其他功能（用英文逗号分隔）';
+$lang['disableactions_rss']    = 'XML 同步 (RSS)';
 $lang['auth_security_timeout'] = '认证安全超时（秒）';
 $lang['securecookie']          = '要让浏览器须以HTTPS方式传送在HTTPS会话中设置的cookies吗？请只在登录过程为SSL加密而浏览维基为明文的情况下打开此选项。';
 $lang['remote']                = '激活远程 API 系统。这允许其他程序通过 XML-RPC 或其他机制来访问维基。';
@@ -196,6 +200,7 @@ $lang['xsendfile_o_2']         = '标准 X-Sendfile 头';
 $lang['xsendfile_o_3']         = '专有 Nginx X-Accel-Redirect 头';
 $lang['showuseras_o_loginname'] = '登录名';
 $lang['showuseras_o_username'] = '用户全名';
+$lang['showuseras_o_username_link'] = '使用用户全名作为维基内的用户链接';
 $lang['showuseras_o_email']    = '用户的电子邮箱（按邮箱保护设置加扰）';
 $lang['showuseras_o_email_link'] = '以mailto：形式显示用户的电子邮箱';
 $lang['useheading_o_0']        = '从不';

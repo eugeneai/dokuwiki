@@ -9,13 +9,16 @@
  * authplain won't get unexpectedly surprised.)
  *
  * @group plugin_authplain
+ * @group auth_plugins
  * @group plugins
+ * @group bundled_plugins
  */
 class helper_plugin_authplain_escaping_test extends DokuWikiTest {
- 
+
     protected $pluginsEnabled = array('authplainharness');
+    /** @var  auth_plugin_authplain|auth_plugin_authplainharness */
     protected $auth;
- 
+
     protected function reloadUsers() {
         /* auth caches data loaded from file, but recreated object forces reload */
         $this->auth = new auth_plugin_authplainharness();
@@ -100,19 +103,31 @@ class helper_plugin_authplain_escaping_test extends DokuWikiTest {
             $this->assertEquals($escaped, $result[2]);
         }
     }
-    
 }
 
+/**
+ * Class auth_plugin_authplainharness
+ */
 class auth_plugin_authplainharness extends auth_plugin_authplain {
 
+    /**
+     * @param boolean $bool
+     */
     public function setPregsplit_safe($bool) {
         $this->_pregsplit_safe = $bool;
     }
 
+    /**
+     * @return bool|mixed
+     */
     public function getPregsplit_safe(){
         return $this->_pregsplit_safe;
     }
 
+    /**
+     * @param string $line
+     * @return array
+     */
     public function splitUserData($line){
         return $this->_splitUserData($line);
     }

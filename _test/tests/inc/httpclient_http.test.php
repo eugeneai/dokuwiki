@@ -3,7 +3,7 @@
 require_once (__DIR__ . '/httpclient_mock.php');
 
 class httpclient_http_test extends DokuWikiTest {
-    protected $server = 'http://httpbin.org';
+    protected $server = 'http://eu.httpbin.org';
 
 
     /**
@@ -289,6 +289,7 @@ class httpclient_http_test extends DokuWikiTest {
      * This address caused trouble with stream_select()
      *
      * @group internet
+     * @group flaky
      */
     function test_wikimatrix(){
         $http = new HTTPMockClient();

@@ -70,9 +70,7 @@ function load_autoload($name){
         'IXR_Client'            => DOKU_INC.'inc/IXR_Library.php',
         'IXR_IntrospectionServer' => DOKU_INC.'inc/IXR_Library.php',
         'Doku_Plugin_Controller'=> DOKU_INC.'inc/plugincontroller.class.php',
-        'GeSHi'                 => DOKU_INC.'inc/geshi.php',
         'Tar'                   => DOKU_INC.'inc/Tar.class.php',
-        'TarLib'                => DOKU_INC.'inc/TarLib.class.php',
         'ZipLib'                => DOKU_INC.'inc/ZipLib.class.php',
         'DokuWikiFeedCreator'   => DOKU_INC.'inc/feedcreator.class.php',
         'Doku_Parser_Mode'      => DOKU_INC.'inc/parser/parser.php',
@@ -109,8 +107,27 @@ function load_autoload($name){
     );
 
     if(isset($classes[$name])){
-        require_once($classes[$name]);
-        return;
+        require ($classes[$name]);
+        return true;
+    }
+
+    // namespace to directory conversion
+    $name = str_replace('\\', '/', $name);
+
+    // plugin namespace
+    if(substr($name, 0, 16) == 'dokuwiki/plugin/') {
+        $name = str_replace('/test/', '/_test/', $name); // no underscore in test namespace
+        $file = DOKU_PLUGIN . substr($name, 16) . '.php';
+        if(file_exists($file)) {
+            require $file;
+            return true;
+        }
+    }
+
+    // our own namespace
+    if(substr($name, 0, 9) == 'dokuwiki/') {
+        require substr($name, 9) . '.php';
+        return true;
     }
 
     // Plugin loading
@@ -119,10 +136,11 @@ function load_autoload($name){
         // try to load the wanted plugin file
         $c = ((count($m) === 4) ? "/{$m[3]}" : '');
         $plg = DOKU_PLUGIN . "{$m[2]}/{$m[1]}$c.php";
-        if(@file_exists($plg)){
-            include_once DOKU_PLUGIN . "{$m[2]}/{$m[1]}$c.php";
+        if(file_exists($plg)){
+            require $plg;
         }
-        return;
+        return true;
     }
+    return false;
 }
 

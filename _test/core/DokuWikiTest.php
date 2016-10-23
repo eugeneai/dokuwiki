@@ -54,7 +54,7 @@ abstract class DokuWikiTest extends PHPUnit_Framework_TestCase {
         foreach (array('default','local','protected') as $config_group) {
             if (empty($config_cascade['main'][$config_group])) continue;
             foreach ($config_cascade['main'][$config_group] as $config_file) {
-                if (@file_exists($config_file)) {
+                if (file_exists($config_file)) {
                     include($config_file);
                 }
             }
@@ -68,12 +68,20 @@ abstract class DokuWikiTest extends PHPUnit_Framework_TestCase {
         foreach (array('default','local') as $config_group) {
             if (empty($config_cascade['license'][$config_group])) continue;
             foreach ($config_cascade['license'][$config_group] as $config_file) {
-                if(@file_exists($config_file)){
+                if(file_exists($config_file)){
                     include($config_file);
                 }
             }
         }
+        // reload some settings
+        $conf['gzip_output'] &= (strpos($_SERVER['HTTP_ACCEPT_ENCODING'],'gzip') !== false);
 
+        if($conf['compression'] == 'bz2' && !DOKU_HAS_BZIP) {
+            $conf['compression'] = 'gz';
+        }
+        if($conf['compression'] == 'gz' && !DOKU_HAS_GZIP) {
+            $conf['compression'] = 0;
+        }
         // make real paths and check them
         init_paths();
         init_files();
@@ -118,5 +126,34 @@ abstract class DokuWikiTest extends PHPUnit_Framework_TestCase {
 
         global $INPUT;
         $INPUT = new Input();
+    }
+
+    /**
+     * Compatibility for older PHPUnit versions
+     *
+     * @param string $originalClassName
+     * @return PHPUnit_Framework_MockObject_MockObject
+     */
+    protected function createMock($originalClassName) {
+        if(is_callable(array('parent', 'createMock'))) {
+            return parent::createMock($originalClassName);
+        } else {
+            return $this->getMock($originalClassName);
+        }
+    }
+
+    /**
+     * Compatibility for older PHPUnit versions
+     *
+     * @param string $originalClassName
+     * @param array $methods
+     * @return PHPUnit_Framework_MockObject_MockObject
+     */
+    protected function createPartialMock($originalClassName, array $methods) {
+        if(is_callable(array('parent', 'createPartialMock'))) {
+            return parent::createPartialMock($originalClassName, $methods);
+        } else {
+            return $this->getMock($originalClassName, $methods);
+        }
     }
 }
