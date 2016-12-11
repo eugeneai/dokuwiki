@@ -33,6 +33,7 @@
 /data/meta/*
 /data/pages/*
 /data/tmp/*
+/data/gitrepo/
 !/data/pages/wiki/dokuwiki.txt
 !/data/pages/wiki/syntax.txt
 !/data/pages/wiki/welcome.txt
@@ -78,3 +79,5 @@ vendor/*/*/docs/*
 vendor/*/*/contrib/*
 vendor/splitbrain/php-archive/apigen.neon
 vendor/splitbrain/php-archive/generate-api.sh
+
+install.php
