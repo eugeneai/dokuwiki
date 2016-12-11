@@ -14,6 +14,9 @@ env:
 matrix:
   allow_failures:
     - php: "hhvm"
+  exclude:
+    - php: "hhvm"
+      env: DISABLE_FUNCTIONS="gzopen"
 notifications:
   irc:
     channels:
@@ -23,8 +26,11 @@ notifications:
 services:
   - "mysql"
   - "postgresql"
+install:
+  - wget -O ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit.phar
+  - chmod 755 ~/.phpenv/versions/hhvm/bin/phpunit
 before_script:
-  - echo "disable_functions=$DISABLE_FUNCTIONS" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - test -z "$DISABLE_FUNCTIONS" || echo "disable_functions=$DISABLE_FUNCTIONS" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - cp _test/mysql.conf.php.dist _test/mysql.conf.php
   - cp _test/pgsql.conf.php.dist _test/pgsql.conf.php
 script: cd _test && phpunit --verbose --stderr
