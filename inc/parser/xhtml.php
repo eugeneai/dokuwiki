@@ -147,7 +147,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
                     }
 
                     // add footnote markup and close this footnote
-                    $this->doc .= $footnote;
+                    $this->doc .= '<div class="content">'.$footnote.'</div>';
                     $this->doc .= '</div>'.DOKU_LF;
                 }
             }
@@ -191,7 +191,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
     function header($text, $level, $pos) {
         global $conf;
 
-        if(!$text) return; //skip empty headlines
+        if(blank($text)) return; //skip empty headlines
 
         $hid = $this->_headerToLink($text, true);
 
@@ -1379,6 +1379,20 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
     }
 
     /**
+     * Open a table footer
+     */
+    function tabletfoot_open() {
+        $this->doc .= DOKU_TAB.'<tfoot>'.DOKU_LF;
+    }
+
+    /**
+     * Close a table footer
+     */
+    function tabletfoot_close() {
+        $this->doc .= DOKU_TAB.'</tfoot>'.DOKU_LF;
+    }
+
+    /**
      * Open a table row
      *
      * @param string|string[] $classes css classes - have to be valid, do not pass unfiltered user input
@@ -1688,7 +1702,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
         } elseif(is_null($title) || trim($title) == '') {
             if(useHeading($linktype) && $id) {
                 $heading = p_get_first_heading($id);
-                if($heading) {
+                if(!blank($heading)) {
                     return $this->_xmlEntities($heading);
                 }
             }
