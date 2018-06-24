@@ -287,17 +287,29 @@ function pageinfo() {
     }
 
     // draft
-    $draft = getCacheName($info['client'].$ID, '.draft');
-    if(file_exists($draft)) {
-        if(@filemtime($draft) < @filemtime(wikiFN($ID))) {
-            // remove stale draft
-            @unlink($draft);
-        } else {
-            $info['draft'] = $draft;
-        }
+    $draft = new \dokuwiki\Draft($ID, $info['client']);
+    if ($draft->isDraftAvailable()) {
+        $info['draft'] = $draft->getDraftFilename();
     }
 
     return $info;
+}
+
+/**
+ * Initialize and/or fill global $JSINFO with some basic info to be given to javascript
+ */
+function jsinfo() {
+    global $JSINFO, $ID, $INFO, $ACT;
+
+    if (!is_array($JSINFO)) {
+        $JSINFO = [];
+    }
+    //export minimal info to JS, plugins can add more
+    $JSINFO['id']                    = $ID;
+    $JSINFO['namespace']             = (string) $INFO['namespace'];
+    $JSINFO['ACT']                   = act_clean($ACT);
+    $JSINFO['useHeadingNavigation']  = (int) useHeading('navigation');
+    $JSINFO['useHeadingContent']     = (int) useHeading('content');
 }
 
 /**
@@ -382,9 +394,9 @@ function breadcrumbs() {
 
     //first visit?
     $crumbs = isset($_SESSION[DOKU_COOKIE]['bc']) ? $_SESSION[DOKU_COOKIE]['bc'] : array();
-    //we only save on show and existing wiki documents
+    //we only save on show and existing visible wiki documents
     $file = wikiFN($ID);
-    if($ACT != 'show' || !file_exists($file)) {
+    if($ACT != 'show' || isHiddenPage($ID) || !file_exists($file)) {
         $_SESSION[DOKU_COOKIE]['bc'] = $crumbs;
         return $crumbs;
     }
@@ -730,7 +742,9 @@ function checkwordblock($text = '') {
                 $data['userinfo']['name'] = $INFO['userinfo']['name'];
                 $data['userinfo']['mail'] = $INFO['userinfo']['mail'];
             }
-            $callback = create_function('', 'return true;');
+            $callback = function () {
+                return true;
+            };
             return trigger_event('COMMON_WORDBLOCK_BLOCKED', $data, $callback, true);
         }
     }
@@ -1109,6 +1123,7 @@ function parsePageTemplate(&$data) {
         array(
              '@ID@',
              '@NS@',
+             '@CURNS@',
              '@FILE@',
              '@!FILE@',
              '@!FILE!@',
@@ -1124,6 +1139,7 @@ function parsePageTemplate(&$data) {
         array(
              $id,
              getNS($id),
+             curNS($id),
              $file,
              utf8_ucfirst($file),
              utf8_strtoupper($file),
@@ -1139,7 +1155,13 @@ function parsePageTemplate(&$data) {
     );
 
     // we need the callback to work around strftime's char limit
-    $tpl         = preg_replace_callback('/%./', create_function('$m', 'return strftime($m[0]);'), $tpl);
+    $tpl = preg_replace_callback(
+        '/%./',
+        function ($m) {
+            return strftime($m[0]);
+        },
+        $tpl
+    );
     $data['tpl'] = $tpl;
     return $tpl;
 }
@@ -1916,7 +1938,16 @@ function send_redirect($url) {
         header('Location: '.$url);
     }
 
-    if(defined('DOKU_UNITTEST')) return; // no exits during unit tests
+    // no exits during unit tests
+    if(defined('DOKU_UNITTEST')) {
+        // pass info about the redirect back to the test suite
+        $testRequest = TestRequest::getRunning();
+        if($testRequest !== null) {
+            $testRequest->addData('send_redirect', $url);
+        }
+        return;
+    }
+
     exit;
 }
 

@@ -5,7 +5,6 @@
  *
  * @author Patrick <spill.p@hotmail.com>
  * @author Arne Hanssen <arne.hanssen@getmail.no>
- * @author Arne Hanssen <arnehans@getmail.no>
  */
 $lang['server']                = 'Din MySQL-server';
 $lang['user']                  = 'Ditt MySQL-brukernavn';
